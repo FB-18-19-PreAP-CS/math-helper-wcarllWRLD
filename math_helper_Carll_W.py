@@ -78,13 +78,28 @@ def midpoint(x1,y1,x2,y2):
     
     >>> midpoint(2,3,6,6)
     (4.0, 4.5)
+    >>> midpoint(.25,-.25,-10,-20)
+    (-4.875, -10.125)
     '''
     
     return ((x1+x2)/2,(y1+y2)/2)
 
 
 
-
+def area_semicircle(r):
+    '''
+    returns the area of a perfect semi circle.
+    Input is radius. Rounds to 3 decimals.
+    >>> area_semicircle(2)
+    6.283
+    >>> area_semicircle(0)
+    0.0
+    >>> area_semicircle(1000)
+    1570796.327
+    
+    '''
+    pi = math.pi
+    return round((pi*r**2)/2,3)
 
 
 
