@@ -55,10 +55,32 @@ def sphere_volume(r):
     return round((4/3)*pi*r**3,3)
 
 def distance_formula(x1,y1,x2,y2):
-    part1 = (x2-x1)**2 + (y2-y1)**2
-    return round(part1,3)
+    '''
+        returns  the distance between two points in square root form.
+        x1,y1,x2,y2 order of input
+    >>> distance_formula(-3,1,0,-3)
+    The distance is the Square root of 25.
     
-
+    >>> distance_formula(-4,22,-10,-3)
+    The distance is the Square root of 661.
+    
+    >>> distance_formula(-4,-4,-4,-4)
+    The distance is the Square root of 0.
+    '''
+    part1 = round((x2-x1)**2 + (y2-y1)**2,3)
+    
+    return print(f"The distance is the Square root of {part1}.")
+    
+def midpoint(x1,y1,x2,y2):
+    '''
+    returns the midpoint of two points
+    enter points in order of x1,y1,x2,y2
+    
+    >>> midpoint(2,3,6,6)
+    (4.0, 4.5)
+    '''
+    
+    return ((x1+x2)/2,(y1+y2)/2)
 
 
 
