@@ -4,19 +4,31 @@ def main():
     while True:
         print("Type [quit] to quit.")
         select = input("Please select your desired formula. [1] Compound Interest [2] Volume of a Sphere [3] Distance Formula [4] Midpoint [5] Area of a Semi-Circle:")
+        print('')
+        print('')
         if select == "1":
             p = float(input('Enter your Principal:'))
             t = float(input('Enter the Amount of times your interest has been compounded:'))
             r = float(input('Enter your interest rate in % form:'))
             print(f'Your Principal of {p}, compunded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
         elif select == "2":
-            break
+            r = float(input('Input your sphere\'s radius:'))
+            print(f'Your sphere with a radius of {r}, has a volume of {sphere_volume(r)}.')
         elif select == "3":
-            break
+            x1 = float(input("Please input the X value for the first coordinate:"))
+            y1 = float(input("Please input the Y value for the first coordinate:"))
+            x2 = float(input("Please input the X value for the second coordinate:"))
+            y2 = float(input("Please input the Y value for the second coordinate:"))
+            print(f'Coordinates ({x1},{y1} and ({x2},{y2}), are the square root of {distance_formula(x1,y1,x2,y2)} apart.)')
         elif select == "4":
-            break
+            x1 = float(input("Please input the X value for the first coordinate:"))
+            y1 = float(input("Please input the Y value for the first coordinate:"))
+            x2 = float(input("Please input the X value for the second coordinate:"))
+            y2 = float(input("Please input the Y value for the second coordinate:"))
+            print(f'The midpoint of coordinates ({x1},{y1} and ({x2},{y2}), is {midpoint(x1,y1,x2,y2)}.')
         elif select == "5":
-            break
+            r = float(input('Input your Semi-circle\'s Radius:'))
+            print(f'Your Semi-circle with a Radius of {r} has an area of {area_semicircle(r)}.')
         elif select == 'quit' or select == 'Quit' or select == 'QUIT':
             print('Thank you for using The math helper!')
             break
