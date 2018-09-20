@@ -1,5 +1,27 @@
 import math
-#def main():
+def main():
+    print("Welcome to the math helper!")
+    while True:
+        print("Type [quit] to quit.")
+        select = input("Please select your desired formula. [1] Compound Interest [2] Volume of a Sphere [3] Distance Formula [4] Midpoint [5] Area of a Semi-Circle:")
+        if select == "1":
+            p = float(input('Enter your Principal:'))
+            t = float(input('Enter the Amount of times your interest has been compounded:'))
+            r = float(input('Enter your interest rate in % form:'))
+            print(f'Your Principal of {p}, compunded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
+        elif select == "2":
+            break
+        elif select == "3":
+            break
+        elif select == "4":
+            break
+        elif select == "5":
+            break
+        elif select == 'quit' or select == 'Quit' or select == 'QUIT':
+            print('Thank you for using The math helper!')
+            break
+        else:
+            print("That is not a vaild option!")
 def compound_int(p,t,r):
     '''returns compound interest rounded to 2 decimals
             Principal, Years(or number of times compounded), Interest
@@ -59,17 +81,17 @@ def distance_formula(x1,y1,x2,y2):
         returns  the distance between two points in square root form.
         x1,y1,x2,y2 order of input
     >>> distance_formula(-3,1,0,-3)
-    The distance is the Square root of 25.
+    25
     
     >>> distance_formula(-4,22,-10,-3)
-    The distance is the Square root of 661.
+    661
     
     >>> distance_formula(-4,-4,-4,-4)
-    The distance is the Square root of 0.
+    0
     '''
-    part1 = round((x2-x1)**2 + (y2-y1)**2,3)
-    
-    return print(f"The distance is the Square root of {part1}.")
+    #part1 = round((x2-x1)**2 + (y2-y1)**2,3)
+    return round((x2-x1)**2 + (y2-y1)**2,3)
+    #return print(f"The distance is the Square root of {part1}.")
     
 def midpoint(x1,y1,x2,y2):
     '''
@@ -109,4 +131,4 @@ def area_semicircle(r):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    #main()
+    main()
