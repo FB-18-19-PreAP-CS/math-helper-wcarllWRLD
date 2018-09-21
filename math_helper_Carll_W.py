@@ -33,7 +33,7 @@ def main():
             print('Thank you for using The math helper!')
             break
         else:
-            print("That is not a vaild option!")
+            print("That is not a valid option!")
 def compound_int(p,t,r):
     '''returns compound interest rounded to 2 decimals
             Principal, Years(or number of times compounded), Interest
@@ -56,11 +56,11 @@ def compound_int(p,t,r):
         >>> compound_int(1000,-3,10)
         Traceback (most recent call last):
             ...
-        ValueError: Time cannot be negitive.
+        ValueError: Time cannot be negative.
         
     '''
     if t < 0:
-        raise ValueError("Time cannot be negitive.")
+        raise ValueError("Time cannot be negative.")
     if r > 99:
             raise ValueError("Rate must be entered in percent and be below 100%.")
     r = r / 100
@@ -81,10 +81,10 @@ def sphere_volume(r):
         >>> sphere_volume(-2)
         Traceback (most recent call last):
             ...
-        ValueError: A sphere's radius cannot be negitive.
+        ValueError: A sphere's radius cannot be negative.
     '''
     if r < 0:
-        raise ValueError("A sphere's radius cannot be negitive.")
+        raise ValueError("A sphere's radius cannot be negative.")
     pi = math.pi
     return round((4/3)*pi*r**3,3)
 
@@ -130,6 +130,8 @@ def area_semicircle(r):
     0.0
     >>> area_semicircle(1000)
     1570796.327
+    >>> area_semicircle(-1)
+    Error?
     
     '''
     pi = math.pi
@@ -143,4 +145,4 @@ def area_semicircle(r):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    main()
+    #main()
