@@ -40,7 +40,10 @@ def compound_int(p,t,r):
             
         >>> compound_int(1000,1,1)
         1010.0
-            
+        
+        >>> compound_int(0,0,0)
+        0.0
+        
         >>> compound_int(2,100,10)
         27561.22
             
@@ -76,6 +79,8 @@ def sphere_volume(r):
         4188.79
         >>> sphere_volume(7.5)
         1767.146
+        >>> sphere_volume(0)
+        0.0
         >>> sphere_volume(4.125)
         294.009
         >>> sphere_volume(-2)
@@ -100,6 +105,11 @@ def distance_formula(x1,y1,x2,y2):
     
     >>> distance_formula(-4,-4,-4,-4)
     0
+    
+    >>> distance_formula(-1,-2,-3,-4)
+    8
+    >>> distance_formula(-100,-200,-300,-400)
+    80000
     '''
     #part1 = round((x2-x1)**2 + (y2-y1)**2,3)
     return round((x2-x1)**2 + (y2-y1)**2,3)
@@ -114,6 +124,12 @@ def midpoint(x1,y1,x2,y2):
     (4.0, 4.5)
     >>> midpoint(.25,-.25,-10,-20)
     (-4.875, -10.125)
+    >>> midpoint(0,0,0,0)
+    (0.0, 0.0)
+    >>> midpoint(5,0,10,0)
+    (7.5, 0.0)
+    >>> midpoint(0,10,0,-20)
+    (0.0, -5.0)
     '''
     
     return ((x1+x2)/2,(y1+y2)/2)
@@ -130,10 +146,16 @@ def area_semicircle(r):
     0.0
     >>> area_semicircle(1000)
     1570796.327
+    >>> area_semicircle(2.66)
+    11.114
     >>> area_semicircle(-1)
-    Error?
+    Traceback (most recent call last):
+            ...
+    ValueError: A Semi circle's radius cannot be negative!
     
     '''
+    if r < 0:
+        raise ValueError('A Semi circle\'s radius cannot be negative!')
     pi = math.pi
     return round((pi*r**2)/2,3)
 
