@@ -2,15 +2,17 @@ import math
 def main():
     print("Welcome to the math helper!")
     while True:
+        print("")
         print("Type [quit] to quit.")
-        select = input("Please select your desired formula. [1] Compound Interest [2] Volume of a Sphere [3] Distance Formula [4] Midpoint [5] Area of a Semi-Circle:")
+
+        select = input("[1] Compound Interest \n[2] Volume of a Sphere \n[3] Distance Formula \n[4] Midpoint \n[5] Area of a Semi-Circle \nPlease select your desired formula:")
         print('')
         print('')
         if select == "1":
             p = float(input('Enter your Principal:'))
             t = float(input('Enter the Amount of times your interest has been compounded:'))
             r = float(input('Enter your interest rate in % form:'))
-            print(f'Your Principal of {p}, compunded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
+            print(f'Your Principal of {p}, compounded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
         elif select == "2":
             r = float(input('Input your sphere\'s radius:'))
             print(f'Your sphere with a radius of {r}, has a volume of {sphere_volume(r)}.')
@@ -25,7 +27,7 @@ def main():
             y1 = float(input("Please input the Y value for the first coordinate:"))
             x2 = float(input("Please input the X value for the second coordinate:"))
             y2 = float(input("Please input the Y value for the second coordinate:"))
-            print(f'The midpoint of coordinates ({x1},{y1} and ({x2},{y2}), is {midpoint(x1,y1,x2,y2)}.')
+            print(f'The midpoint of coordinates ({x1},{y1}) and ({x2},{y2}) is {midpoint(x1,y1,x2,y2)}.')
         elif select == "5":
             r = float(input('Input your Semi-circle\'s Radius:'))
             print(f'Your Semi-circle with a Radius of {r} has an area of {area_semicircle(r)}.')
@@ -167,4 +169,4 @@ def area_semicircle(r):
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
-    #main()
+    main()
