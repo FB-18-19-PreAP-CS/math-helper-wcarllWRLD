@@ -2,40 +2,43 @@ import math
 def main():
     print("Welcome to the math helper!")
     while True:
-        print("")
-        print("Type [quit] to quit.")
+        try:
+            print("")
+            print("Type [quit] to quit.")
 
-        select = input("[1] Compound Interest \n[2] Volume of a Sphere \n[3] Distance Formula \n[4] Midpoint \n[5] Area of a Semi-Circle \nPlease select your desired formula:")
-        print('')
-        print('')
-        if select == "1":
-            p = float(input('Enter your Principal:'))
-            t = float(input('Enter the Amount of times your interest has been compounded:'))
-            r = float(input('Enter your interest rate in % form:'))
-            print(f'Your Principal of {p}, compounded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
-        elif select == "2":
-            r = float(input('Input your sphere\'s radius:'))
-            print(f'Your sphere with a radius of {r}, has a volume of {sphere_volume(r)}.')
-        elif select == "3":
-            x1 = float(input("Please input the X value for the first coordinate:"))
-            y1 = float(input("Please input the Y value for the first coordinate:"))
-            x2 = float(input("Please input the X value for the second coordinate:"))
-            y2 = float(input("Please input the Y value for the second coordinate:"))
-            print(f'Coordinates ({x1},{y1} and ({x2},{y2}), are the square root of {distance_formula(x1,y1,x2,y2)} apart.)')
-        elif select == "4":
-            x1 = float(input("Please input the X value for the first coordinate:"))
-            y1 = float(input("Please input the Y value for the first coordinate:"))
-            x2 = float(input("Please input the X value for the second coordinate:"))
-            y2 = float(input("Please input the Y value for the second coordinate:"))
-            print(f'The midpoint of coordinates ({x1},{y1}) and ({x2},{y2}) is {midpoint(x1,y1,x2,y2)}.')
-        elif select == "5":
-            r = float(input('Input your Semi-circle\'s Radius:'))
-            print(f'Your Semi-circle with a Radius of {r} has an area of {area_semicircle(r)}.')
-        elif select == 'quit' or select == 'Quit' or select == 'QUIT':
-            print('Thank you for using The math helper!')
-            break
-        else:
-            print("That is not a valid option!")
+            select = input("[1] Compound Interest \n[2] Volume of a Sphere \n[3] Distance Formula \n[4] Midpoint \n[5] Area of a Semi-Circle \nPlease select your desired formula:")
+            print('')
+            print('')
+            if select == "1":
+                p = float(input('Enter your Principal:'))
+                t = float(input('Enter the Amount of times your interest has been compounded:'))
+                r = float(input('Enter your interest rate in % form:'))
+                print(f'Your Principal of {p}, compounded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
+            elif select == "2":
+                r = float(input('Input your sphere\'s radius:'))
+                print(f'Your sphere with a radius of {r}, has a volume of {sphere_volume(r)}.')
+            elif select == "3":
+                x1 = float(input("Please input the X value for the first coordinate:"))
+                y1 = float(input("Please input the Y value for the first coordinate:"))
+                x2 = float(input("Please input the X value for the second coordinate:"))
+                y2 = float(input("Please input the Y value for the second coordinate:"))
+                print(f'Coordinates ({x1},{y1} and ({x2},{y2}), are the square root of {distance_formula(x1,y1,x2,y2)} apart.)')
+            elif select == "4":
+                x1 = float(input("Please input the X value for the first coordinate:"))
+                y1 = float(input("Please input the Y value for the first coordinate:"))
+                x2 = float(input("Please input the X value for the second coordinate:"))
+                y2 = float(input("Please input the Y value for the second coordinate:"))
+                print(f'The midpoint of coordinates ({x1},{y1}) and ({x2},{y2}) is {midpoint(x1,y1,x2,y2)}.')
+            elif select == "5":
+                r = float(input('Input your Semi-circle\'s Radius:'))
+                print(f'Your Semi-circle with a Radius of {r} has an area of {area_semicircle(r)}.')
+            elif select == 'quit' or select == 'Quit' or select == 'QUIT':
+                print('Thank you for using The math helper!')
+                break
+            else:
+                print("That is not a valid option!")
+        except Exception as e:
+            print(f"Error: {e}")
 def compound_int(p,t,r):
     '''returns compound interest rounded to 2 decimals
             Principal, Years(or number of times compounded), Interest
@@ -133,8 +136,8 @@ def midpoint(x1,y1,x2,y2):
     >>> midpoint(0,10,0,-20)
     (0.0, -5.0)
     '''
-    
     return ((x1+x2)/2,(y1+y2)/2)
+
 
 
 
@@ -160,6 +163,7 @@ def area_semicircle(r):
         raise ValueError('A Semi circle\'s radius cannot be negative!')
     pi = math.pi
     return round((pi*r**2)/2,3)
+
 
 
 
