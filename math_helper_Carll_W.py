@@ -13,7 +13,7 @@ def main():
                 p = float(input('Enter your Principal:'))
                 t = float(input('Enter the Amount of times your interest has been compounded:'))
                 r = float(input('Enter your interest rate in % form:'))
-                print(f'Your Principal of {p}, compounded {t} times, at a rate of {r}%, is now worth {compound_int(p,r,t)}!')
+                print(f'Your Principal of {p}, compounded {t} times, at a rate of {r}%, is now worth {compound_int(p,t,r)}!')
             elif select == "2":
                 r = float(input('Input your sphere\'s radius:'))
                 print(f'Your sphere with a radius of {r}, has a volume of {sphere_volume(r)}.')
@@ -32,7 +32,7 @@ def main():
             elif select == "5":
                 r = float(input('Input your Semi-circle\'s Radius:'))
                 print(f'Your Semi-circle with a Radius of {r} has an area of {area_semicircle(r)}.')
-            elif select == 'quit' or select == 'Quit' or select == 'QUIT':
+            elif select.lower() == 'quit':
                 print('Thank you for using The math helper!')
                 break
             else:
@@ -40,7 +40,7 @@ def main():
         except Exception as e:
             print(f"Error: {e}")
 def compound_int(p,t,r):
-    '''returns compound interest rounded to 2 decimals
+    '''Returns compound interest rounded to 2 decimals.
             Principal, Years(or number of times compounded), Interest
             
         >>> compound_int(1000,1,1)
@@ -79,7 +79,7 @@ def compound_int(p,t,r):
         
 
 def sphere_volume(r):
-    '''returns volume of sphere rounded to 3 decimals
+    '''Returns volume of sphere rounded to 3 decimals, using Pi.
         >>> sphere_volume(10)
         4188.79
         >>> sphere_volume(7.5)
@@ -122,7 +122,7 @@ def distance_formula(x1,y1,x2,y2):
     
 def midpoint(x1,y1,x2,y2):
     '''
-    returns the midpoint of two points
+    Returns the midpoint of two points.
     enter points in order of x1,y1,x2,y2
     
     >>> midpoint(2,3,6,6)
@@ -143,7 +143,7 @@ def midpoint(x1,y1,x2,y2):
 
 def area_semicircle(r):
     '''
-    returns the area of a perfect semi circle.
+    Returns the area of a perfect semi circle.
     Input is radius. Rounds to 3 decimals.
     >>> area_semicircle(2)
     6.283
